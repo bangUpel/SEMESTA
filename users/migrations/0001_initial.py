@@ -12,11 +12,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Candidate',
+            name='Voter',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('total_point', models.IntegerField(default=0)),
+                ('name', models.CharField(blank=True, max_length=100, null=True)),
+                ('NIK', models.CharField(max_length=20, unique=True)),
+                ('voted', models.BooleanField(default=False)),
             ],
         ),
     ]
